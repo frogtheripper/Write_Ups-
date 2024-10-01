@@ -228,7 +228,7 @@ joe
 Script started, output log file is '/dev/null'.
 ```
 
-Una vez dentro listamos archivos SUID&#x20;
+Una vez dentro listamos los permisos &#x20;
 
 <figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
