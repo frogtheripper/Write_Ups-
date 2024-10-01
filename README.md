@@ -1,6 +1,20 @@
 ---
-cover: .gitbook/assets/98.webp
-coverY: 0
+cover: .gitbook/assets/contrasena-pinzas-mano-codigo-binario.jpg
+coverY: -110
+layout:
+  cover:
+    visible: true
+    size: hero
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
 
 # 👋 Heeey..
