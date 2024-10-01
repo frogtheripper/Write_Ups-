@@ -1,4 +1,7 @@
-
+---
+cover: .gitbook/assets/98.webp
+coverY: 0
+---
 
 # 👋 Heeey..
 
