@@ -6,8 +6,9 @@
 * **Sistema Operativo:** Linux
 * **Dificultad:** Fácil
 * **Plataforma:** [DockerLabs](https://dockerlabs.es/)
-* **Dirección IP:**&#x20;
-* **Vulnerabilidad**:&#x20;
+* **Dirección IP:** 127.17.0.2
+
+
 
 ### Escaneo de puertos.
 
