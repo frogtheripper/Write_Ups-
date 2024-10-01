@@ -6,7 +6,8 @@
 
 * [🟦 Muy Facil](thehackerlabs/muy-facil.md)
 * [🟩 Facil](thehackerlabs/facil/README.md)
-  * [Maquina vulnvault](thehackerlabs/facil/maquina-vulnvault.md)
+  * [💻 Maquina vulnvault](thehackerlabs/facil/maquina-vulnvault.md)
+  * [💻 Maquina Showtime\_Sql](thehackerlabs/facil/maquina-showtime\_sql.md)
 * [🟨 Medio](thehackerlabs/medio.md)
 * [🟥 Dificil](thehackerlabs/dificil.md)
 

