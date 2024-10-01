@@ -4,7 +4,7 @@ coverY: -110
 layout:
   cover:
     visible: true
-    size: hero
+    size: full
   title:
     visible: true
   description:
@@ -14,7 +14,7 @@ layout:
   outline:
     visible: true
   pagination:
-    visible: true
+    visible: false
 ---
 
 # 👋 Heeey..
