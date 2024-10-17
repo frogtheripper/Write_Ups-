@@ -6,7 +6,7 @@ description: Maquina Numero  1 del Curso Pentester Mentor Junior
 
 <figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
-## `RAUL ANDRES VILLAMIZAR`
+## `RAUL ANDRES VILLAMIZAR - rvillamizar492@gmail.com`
 
 ### Barrido dispositivos en la red.
 
