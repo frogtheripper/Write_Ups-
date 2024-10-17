@@ -141,13 +141,13 @@ Una vez con estas credenciales vamos intentar ingresar ala pagina para ver que h
 
 Ejecutamos nuestra revershell con python mientras en una terminal tenemos nuestro puerto ala espera con `nc -nlvp 443`
 
-<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Y efectivamente logramos a conexion..
 
 ### Post explotacion
 
-<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Trate de escalar privilegios al usuario joe con `su joe` e ingresar la contraseña con a que tuvimos acceso al panel pero no fue posible, busque archivos SUID pero tampoco habia nada interesante en la carpeta `/tmp` encontramos un archivo oculto ./.hidden\_text.txt al abrirlo encontre una especie de Diccionario con todas la palabras en mayuscula me las copie en mi maquina.
 
@@ -202,7 +202,7 @@ Lance fuerza bruta con hydra en ssh para el usuario joe y luciano pero no encont
 
 `awk '{ print tolower($0) }' words.txt > lista_min.txt`
 
-<figure><img src="../../.gitbook/assets/image (3) (1).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1) (1).png" alt="" width="563"><figcaption></figcaption></figure>
 
 Ya tenemos un usuario y una contraseña para ingresar por `ssh`
 
@@ -230,7 +230,7 @@ Script started, output log file is '/dev/null'.
 
 Una vez dentro listamos los permisos &#x20;
 
-<figure><img src="../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Vemos que tenemos permiso como luciano con `POSH` un herramienta de linea de comandos parecida a bash entonces corremos&#x20;
 
@@ -242,7 +242,7 @@ sudo -u luciano posh
 
 Una ve esto ya somos usuario luciano&#x20;
 
-<figure><img src="../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Como vemos al buscar SUID vemo que el archivo script.sh tiene permisos Root por lo que vamos a la ubicacion y miramos que tiene
 
@@ -264,6 +264,6 @@ Le otorgamos ala bash permisos SUID&#x20;
 
 Ejecutamos bash -p para tener una shell como root y...
 
-<figure><img src="../../.gitbook/assets/image (6) (1).png" alt="" width="119"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6) (1) (1).png" alt="" width="119"><figcaption></figcaption></figure>
 
 [^1]: 

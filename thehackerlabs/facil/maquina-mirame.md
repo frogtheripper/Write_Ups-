@@ -1,6 +1,6 @@
 # 💻 Maquina Mirame
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 * **Nombre de la Máquina:** Balulero
 * **Sistema Operativo:** Linux
@@ -74,7 +74,7 @@ Nmap done: 1 IP address (1 host up) scanned in 8.64 seconds
 
 Encontramos el puerto 80 que corre http y el puerto 22 que corre ssh, procedemos ir al navegador e ntroducir la ip para ver que nos encontramos.
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt="" width="291"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1).png" alt="" width="291"><figcaption></figcaption></figure>
 
 Encontramos un login en el cual intentamos diferentes combinaciones pero no es posible al adjuntar una comilla nos damos de cuenta que nos lanza un error, por lo que puede ser vulnerable a un ataque sqlinyection por lo que procedemos a correr `sqlmap`
 
@@ -203,7 +203,7 @@ Table: usuarios
 
 Como vemos tenemos 4 usuarios diferentes con sus respectivas contraseñas con estas ingresamos pero vemos que nos abre una pagina donde nos muestra la temperatura de la ciudad que ingresemos, por lo cual no nos sirve de mucho.
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt="" width="329"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5) (1).png" alt="" width="329"><figcaption></figcaption></figure>
 
 Anteriormente en los usuarios que encontramos uno de ellos nos dio como una pista, para saber que era la direccion como de un directorio intentamos ingresar y efectivamente nos lleva a una pagina done tenemos una imagen `mirame.jpg`
 
@@ -212,7 +212,7 @@ Anteriormente en los usuarios que encontramos uno de ellos nos dio como una pist
 +----+------------------------+------------+
 ```
 
-<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 La descargamos y usamos la herramienta `exiftool` para ver sus metadatos pero no encontramos nada por lo que recurrimos a `steghide` para ver si hay algún archivo oculto .
 
@@ -256,7 +256,7 @@ ocultito.zip/secret.txt:stupid1:secret.txt:ocultito.zip::ocultito.zip
 
 Encontramos la contraseña stupid1 con lo cual extremos el zip y encontramos un txt donde se encuentra unas credenciales las cual aprovecharemos para ingresar por ssh.
 
-<figure><img src="../../.gitbook/assets/image (8).png" alt="" width="247"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8) (1).png" alt="" width="247"><figcaption></figcaption></figure>
 
 `ssh carlos@172.17.0.2`
 
@@ -294,7 +294,7 @@ Tratamos de listar permisos sudo -l pero no nos fue posible asi que buscamos en 
 
 Como vemos encontramos un binario <mark style="color:orange;">find</mark> el cual vamos a buscar en [GTFObins](https://gtfobins.github.io/) y vemos que podemos aprovecharlo para escalar privilegios.
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ```bash
 carlos@055007bdd9cd:~$ /usr/bin/find . -exec /bin/sh -p \; -quit
